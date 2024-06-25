@@ -31,6 +31,8 @@ El primer volumen será donde se almacene la configuración de la aplicación, a
 
 El segundo volumen es donde se moverán las series y peliculas una vez estén descargados desde Sonarr o Radarr
 
+Para más información: https://hub.docker.com/r/fallenbagel/jellyseerr
+
 ## Radarr
 
 docker-compose.yml
