@@ -22,8 +22,11 @@ services:
             - 5055:5055
        volumes:
             - /home/juan/dockersFile/Jellyseerr/jellyseerrData:/app/config
-            - /mnt/torrent/02_Radarr/movies:/movies #optional
+            - /mnt/torrent/movies:/movies #optional
        restart: unless-stopped
 ```
 </p>
 
+El primer volumen será donde se almacene la configuración de la aplicación, así, en el momento de borrarla o actualizarla se mantendrán los archivos
+
+El segundo volumen es donde se moverán las series y peliculas una vez estén descargados desde Sonarr o Radarr
