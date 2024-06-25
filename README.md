@@ -124,7 +124,8 @@ services:
 ```
 </p>
 
-- El primer y único volumen se corresponderá a la configuración de la aplicación
+- El primer y único volumen se corresponderá a la configuración de la aplicación.
+En este caso no tendremos más volumenes ya que el intercambio de indexers se hará a través de API
 
 
 Para más información: https://hub.docker.com/r/linuxserver/prowlarr
