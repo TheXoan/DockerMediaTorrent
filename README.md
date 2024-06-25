@@ -9,7 +9,7 @@ docker-compose.yml
 
 <p> 
 
-```
+```docker
 version: '3'
 services:
     jellyseerr:
