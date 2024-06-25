@@ -41,6 +41,11 @@ services:
 
 Para más información: https://hub.docker.com/r/fallenbagel/jellyseerr
 
+TIPS:
+- En Jellyseerr se pueden usar los usuarios que tengamos en Jellyfin si lo tenemos instalado
+- Para que nos muestre los títulos en español debemos seleccionarlo en ajustes:
+![Imagen](Images/LanguageJellyseerr.png)
+
 ## Radarr
 
 docker-compose.yml
