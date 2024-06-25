@@ -1,5 +1,5 @@
 # DockerMediaTorrent
-### Configuración de (Jellyseerr - Sonarr - Radarr - Prowlarr - Jacket) sobre Docker
+### Configuración de (Jellyseerr - Sonarr - Radarr - Prowlarr - Jacket - Transmission) sobre Docker
 
 Creación y configuración de servidor MediaTorrent sobre docker
 
@@ -27,11 +27,11 @@ services:
 ```
 </p>
 
-El primer volumen será donde se almacene la configuración de la aplicación, así, en el momento de borrarla o actualizarla se mantendrán los archivos
+- El primer volumen será donde se almacene la configuración de la aplicación, así, en el momento de borrarla o actualizarla se mantendrán los archivos
 
-El segundo volumen es donde se moverán las series y peliculas una vez estén descargados desde Sonarr o Radarr
+- El segundo volumen es donde se moverán las series y peliculas una vez estén descargados desde Sonarr o Radarr
 
-Una vez creemos el fichero docker-compose.yml, en la ruta donde este el fichero ejecutamos: docker compose up -d
+- Una vez creemos el fichero docker-compose.yml, en la ruta donde este el fichero ejecutamos: docker compose up -d
 
 Para más información: https://hub.docker.com/r/fallenbagel/jellyseerr
 
@@ -60,11 +60,13 @@ services:
 ```
 </p>
 
-El primer volumen corresponde a la configuración de la aplicación
+- El primer volumen corresponde a la configuración de la aplicación
 
-El segundo volumen corresponde a la ruta donde dejará las peliculas que se descarguen desde nuestra aplicación Torrent, Radarr las moverá a esta ruta, se configurará en la aplicación
+- El segundo volumen corresponde a la ruta donde dejará las peliculas que se descarguen desde nuestra aplicación Torrent, Radarr las moverá a esta ruta, se configurará en la aplicación
 
-El tercer volumen corresponde a una ruta que deberemos mapear con la ruta donde nuestra aplicación de Torrent descargue. Así Radarr podrá verificar que se descargaron y además es la ruta donde irá a buscar los archivos que descargue para moverlos al anterior volumen
+- El tercer volumen corresponde a una ruta que deberemos mapear con la ruta donde nuestra aplicación de Torrent descargue. Así Radarr podrá verificar que se descargaron y además es la ruta donde irá a buscar los archivos que descargue para moverlos al anterior volumen
+
+Para más información: https://hub.docker.com/r/linuxserver/radarr
 
 ## Sonarr
 
@@ -91,8 +93,38 @@ services:
 ```
 </p>
 
-El primer volumen corresponde a la configuración de la aplicación
+- El primer volumen corresponde a la configuración de la aplicación
 
-El segundo volumen corresponde a la ruta donde dejará las series que se descarguen desde nuestra aplicación Torrent, Sonarr las moverá a esta ruta, se configurará en la aplicación
+- El segundo volumen corresponde a la ruta donde dejará las series que se descarguen desde nuestra aplicación Torrent, Sonarr las moverá a esta ruta, se configurará en la aplicación
 
-El tercer volumen corresponde a una ruta que deberemos mapear con la ruta donde nuestra aplicación de Torrent descargue. Así Sonarr podrá verificar que se descargaron y además es la ruta donde irá a buscar los archivos que descargue para moverlos al anterior volumen
+- El tercer volumen corresponde a una ruta que deberemos mapear con la ruta donde nuestra aplicación de Torrent descargue. Así Sonarr podrá verificar que se descargaron y además es la ruta donde irá a buscar los archivos que descargue para moverlos al anterior volumen<
+
+Para más información: https://hub.docker.com/r/linuxserver/sonarr
+
+## Prowlarr
+
+docker-compose.yml
+
+<p> 
+
+```docker
+services:
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    volumes:
+      - /home/juan/dockersFile/Prowlarr/prowlarrData:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
+```
+</p>
+
+- El primer y único volumen se corresponderá a la configuración de la aplicación
+
+
+Para más información: https://hub.docker.com/r/linuxserver/prowlarr
