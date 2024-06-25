@@ -31,6 +31,8 @@ El primer volumen será donde se almacene la configuración de la aplicación, a
 
 El segundo volumen es donde se moverán las series y peliculas una vez estén descargados desde Sonarr o Radarr
 
+Una vez creemos el fichero docker-compose.yml, en la ruta donde este el fichero ejecutamos: docker compose up -d
+
 Para más información: https://hub.docker.com/r/fallenbagel/jellyseerr
 
 ## Radarr
