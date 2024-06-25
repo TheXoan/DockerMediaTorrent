@@ -44,7 +44,11 @@ Para más información: https://hub.docker.com/r/fallenbagel/jellyseerr
 TIPS:
 - En Jellyseerr se pueden usar los usuarios que tengamos en Jellyfin si lo tenemos instalado
 - Para que nos muestre los títulos en español debemos seleccionarlo en ajustes:
-![Imagen](Images/LanguageJellyseerr.png)
+![Imagen](/Images/LanguageJellyseer.png)
+- Para poder descargar torrents 4K debemos tener un _Servicio_(Sonarr o Radarr) configurado con esa resolución y luego podremos habilitarlo en Ajustes - Usuarios
+- Se pueden configurar 2 Radarr aún con la misma IP para tener contenido en distintas resoluciones:
+![Imagen](/Images/ServiciosJellyseer.png)
+- Tanto para sincronizarlo con Sonarr como con Radarr debemos tener creada previamente una carpeta raíz, si no la tenemos creada, debemos crearla y luego podemos sincronizar el servicio. Esta carpeta será la que tengan en común donde se moverán los torrents descargados. Más adelante mostraré como configurarla
 
 ## Radarr
 
