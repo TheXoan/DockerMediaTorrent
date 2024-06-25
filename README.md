@@ -59,3 +59,40 @@ services:
     restart: unless-stopped
 ```
 </p>
+
+El primer volumen corresponde a la configuración de la aplicación
+
+El segundo volumen corresponde a la ruta donde dejará las peliculas que se descarguen desde nuestra aplicación Torrent, Radarr las moverá a esta ruta, se configurará en la aplicación
+
+El tercer volumen corresponde a una ruta que deberemos mapear con la ruta donde nuestra aplicación de Torrent descargue. Así Radarr podrá verificar que se descargaron y además es la ruta donde irá a buscar los archivos que descargue para moverlos al anterior volumen
+
+## Sonarr
+
+docker-compose.yml
+
+<p> 
+
+```docker
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+    volumes:
+      - /home/juan/dockersFile/Sonarr/sonarrData:/config
+      - /mnt/torrent/03_Sonarr/tv/:/tv #optional
+      - /mnt/torrent/03_Sonarr/downloads/:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+```
+</p>
+
+El primer volumen corresponde a la configuración de la aplicación
+
+El segundo volumen corresponde a la ruta donde dejará las series que se descarguen desde nuestra aplicación Torrent, Sonarr las moverá a esta ruta, se configurará en la aplicación
+
+El tercer volumen corresponde a una ruta que deberemos mapear con la ruta donde nuestra aplicación de Torrent descargue. Así Sonarr podrá verificar que se descargaron y además es la ruta donde irá a buscar los archivos que descargue para moverlos al anterior volumen
