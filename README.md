@@ -50,6 +50,9 @@ TIPS:
 ![Imagen](/Images/ServiciosJellyseer.png)
 - Tanto para sincronizarlo con Sonarr como con Radarr debemos tener creada previamente una carpeta raíz, si no la tenemos creada, debemos crearla y luego podemos sincronizar el servicio. Esta carpeta será la que tengan en común donde se moverán los torrents descargados. Más adelante mostraré como configurarla
 
+- Cuando seleccionemos la pelicula/serie que queramos descargar deberemos seleccionar la calidad e idioma. Esto se configura en las aplicaciones correspondientes de Sonarr y Radarr creadno un perfil con las opciones que queramos.
+![Imagen](/Images/perfiles.png)
+
 ## Radarr
 
 docker-compose.yml
