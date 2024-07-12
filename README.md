@@ -89,7 +89,7 @@ Para más información: https://hub.docker.com/r/linuxserver/radarr
 - Para configurar los perfiles con el idioma y calidad antes mencionados debemos ir a Settings-Profiles
 ![Imagen](/Images/perfiles.png)
 
-- Para añadir el indexer de prowlarr o jacket vamos a  Settings - Indexers y añadimos un indexer de tipo Tornab. En el caso de Jacket es sencillo ya que simplemente debemos pulsar en "Copy Torznab feed" y luego pegarlo en la dirección del indexer
+- Para añadir el indexer de prowlarr o jacket vamos a  Settings - Indexers y añadimos un indexer de tipo Torznab. En el caso de Jacket es sencillo ya que simplemente debemos pulsar en "Copy Torznab feed" y luego pegarlo en la dirección del indexer
 ![Imagen](/Images/indexers.png)
 Para el caso de los sincronizados con Prowlarr tendremos que saber el ID que se obtiene en los Indexers de Prowlarr.
 ![Imagen](/Images/indexersProwlarr.png)
@@ -123,7 +123,7 @@ services:
 
 - El segundo volumen corresponde a la ruta donde dejará las series que se descarguen desde nuestra aplicación Torrent, Sonarr las moverá a esta ruta, se configurará en la aplicación
 
-- El tercer volumen corresponde a una ruta que deberemos mapear con la ruta donde nuestra aplicación de Torrent descargue. Así Sonarr podrá verificar que se descargaron y además es la ruta donde irá a buscar los archivos que descargue para moverlos al anterior volumen<
+- El tercer volumen corresponde a una ruta que deberemos mapear con la ruta donde nuestra aplicación de Torrent descargue. Así Sonarr podrá verificar que se descargaron y además es la ruta donde irá a buscar los archivos que descargue para moverlos al anterior volumen
 
 Para más información: https://hub.docker.com/r/linuxserver/sonarr
 
@@ -224,3 +224,8 @@ services:
 - El primer volumen al igual que en los demás casos corresponde a la configuración de la aplicación
 - El segundo volumen será donde Transmission descargue por defecto los torrents
 - El tercer volumen será donde Transmission estará esperando que se la añadan los archivos torrent para descargarlos automáticamente
+
+Para más información: https://hub.docker.com/r/linuxserver/transmission
+
+- Para sincronizar Sonarr y Radarr con Transmission solo debemos añadirlo como Download Client en Settings con su usuario y contraseña de acceso web
+![Imagen](/Images/transmission.png)
