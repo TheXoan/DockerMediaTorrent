@@ -50,7 +50,7 @@ TIPS:
 ![Imagen](/Images/ServiciosJellyseer.png)
 - Tanto para sincronizarlo con Sonarr como con Radarr debemos tener creada previamente una carpeta raíz, si no la tenemos creada, debemos crearla y luego podemos sincronizar el servicio. Esta carpeta será la que tengan en común donde se moverán los torrents descargados. Más adelante mostraré como configurarla
 
-- Cuando seleccionemos la pelicula/serie que queramos descargar deberemos seleccionar la calidad e idioma. Esto se configura en las aplicaciones correspondientes de Sonarr y Radarr creadno un perfil con las opciones que queramos.
+- Cuando seleccionemos la pelicula/serie que queramos descargar deberemos seleccionar la calidad e idioma. Esto se configura en las aplicaciones correspondientes de Sonarr y Radarr creando un perfil con las opciones que queramos.
 ![Imagen](/Images/PerfilesJellyseer.png)
 
 ## Radarr
@@ -88,6 +88,11 @@ Para más información: https://hub.docker.com/r/linuxserver/radarr
 
 - Para configurar los perfiles con el idioma y calidad antes mencionados debemos ir a Settings-Profiles
 ![Imagen](/Images/perfiles.png)
+
+- Para añadir el indexer de prowlarr o jacket vamos a  Settings - Indexers y añadimos un indexer de tipo Tornab. En el caso de Jacket es sencillo ya que simplemente debemos pulsar en "Copy Torznab feed" y luego pegarlo en la dirección del indexer
+![Imagen](/Images/indexers.png)
+Para el caso de los sincronizados con Prowlarr tendremos que saber el ID que se obtiene en los Indexers de Prowlarr.
+![Imagen](/Images/indexersProwlarr.png)
 
 ## Sonarr
 
@@ -152,6 +157,8 @@ En este caso no tendremos más volumenes ya que el intercambio de indexers se ha
 _NOTA: Prowlarr es una aplicación muy nueva y aún en desarrollo por lo la mayoría de indexers que tiene son en inglés,si como yo buscas torrents en español, la mejor opción es Jackett que es el servicio que instalaremos a continuación_
 
 Para más información: https://hub.docker.com/r/linuxserver/prowlarr
+
+- Una vez tengamos seleccionados los indexers que queremos debemos is a Settings - Apps y sincronizar con los servicios que deseemos, solo tendremos que incluir las IPs y el api token del servicio que queramos sincronizar
 
 ## Jackett
 
